@@ -1,0 +1,18 @@
+<h2>Enter Your Working Skills</h2>
+
+<form class="skills" [formGroup]="skillsForm">
+  <div class="form-group">
+    <label>Skills</label>
+    <ul class="skills__items" formArrayName="skills">
+      <li
+        class="skills__item"
+        *ngFor="let skill of skillsForm.get('skills').controls; let i = index"
+      >
+        <input class="form-control" [formControlName]="i" />
+        <button (click)="remove(i)">X</button>
+      </li>
+    </ul>
+    <button (click)="addControl()">Add Skill</button>
+    <button (click)="submit()" [disabled]="skillsForm.invalid">Submit</button>
+  </div>
+</form>

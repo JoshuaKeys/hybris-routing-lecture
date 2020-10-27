@@ -1,0 +1,8 @@
+<h1>About</h1>
+<nav>
+  <button (click)="goBack()">Go Back</button>
+</nav>
+<section *ngIf="userData.email && userData.name">
+  <p><b>Your Name is:</b> {{ userData.name }}</p>
+  <p><b>Your Email is:</b> {{ userData.email }}</p>
+</section>
